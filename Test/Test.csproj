@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="CalculadorTest.cs" />
     <Compile Include="DescuentoTest.cs" />
+    <Compile Include="ImpuestoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

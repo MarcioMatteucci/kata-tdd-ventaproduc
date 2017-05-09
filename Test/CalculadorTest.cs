@@ -41,9 +41,45 @@ namespace Test
         [TestCase(120, 1, ExpectedResult = 120)]
         [TestCase(3, 150, ExpectedResult = 450)]
         [TestCase(5, 50, ExpectedResult = 250)]
-        [TestCase(120, 10, ExpectedResult = 1200)]
-        [TestCase(120, 33.412, ExpectedResult = 4009.44)]
-        public decimal Get_Total_PrecioYCant_DistCero(int cant, decimal precio)
+        [TestCase(100, 9.999, ExpectedResult = 999.9)]
+        public decimal Get_Total_Monto_Menor_1000(int cant, decimal precio)
+        {
+            return calcu.getTotal(cant, precio);
+        }
+
+        [TestCase(100, 10, ExpectedResult = 970)]
+        [TestCase(10, 499.999, ExpectedResult = 4849.9903)]
+        [TestCase(30, 150.54, ExpectedResult = 4380.714)]
+        public decimal Get_Total_Monto_Entre_1000y5000(int cant, decimal precio)
+        {
+            return calcu.getTotal(cant, precio);
+        }
+
+        [TestCase(5000, 1, ExpectedResult = 4750)]
+        [TestCase(5000, 1.112, ExpectedResult = 5282)]
+        [TestCase(9999, 1, ExpectedResult = 9499.05)]
+        public decimal Get_Total_Monto_Entre_5000y10000(int cant, decimal precio)
+        {
+            return calcu.getTotal(cant, precio);
+        }
+
+        [TestCase(10000, 1, ExpectedResult = 9200)]
+        [TestCase(10000, 1.432, ExpectedResult = 13174.4)]
+        public decimal Get_Total_Monto_Entre_10000y15000(int cant, decimal precio)
+        {
+            return calcu.getTotal(cant, precio);
+        }
+
+        [TestCase(15000, 1, ExpectedResult = 13500)]
+        [TestCase(15000, 1.432, ExpectedResult = 19332)]
+        public decimal Get_Total_Monto_Entre_15000y50000(int cant, decimal precio)
+        {
+            return calcu.getTotal(cant, precio);
+        }
+
+        [TestCase(50000, 1, ExpectedResult = 42500)]
+        [TestCase(50000, 1.432, ExpectedResult = 60860)]
+        public decimal Get_Total_Monto_MasDe_50000(int cant, decimal precio)
         {
             return calcu.getTotal(cant, precio);
         }
