@@ -20,10 +20,10 @@ namespace Test
         [TestCase(0, 105.23)]
         [TestCase(0, 115.99)]
         [TestCase(0, 0)]
-        public void Calcula_Total_Cant_EsCero(int cant, decimal precio)
+        public void Get_Total_Cant_EsCero(int cant, decimal precio)
         {
             var resul = calcu.getTotal(cant, precio);
-            Assert.AreEqual(0, resul);
+            Assert.AreEqual(0m, resul);
         }
 
         [TestCase(120, 0)]
@@ -31,10 +31,10 @@ namespace Test
         [TestCase(320, 0.000)]
         [TestCase(0, 0)]
         [TestCase(1230, 0.0)]
-        public void Calcula_Total_Precio_EsCero(int cant, decimal precio)
+        public void Get_Total_Precio_EsCero(int cant, decimal precio)
         {
             var resul = calcu.getTotal(cant, precio);
-            Assert.AreEqual(0, resul);
+            Assert.AreEqual(0m, resul);
         }
 
         [TestCase(1, 1.1, ExpectedResult = 1.1)]
@@ -43,7 +43,7 @@ namespace Test
         [TestCase(5, 50, ExpectedResult = 250)]
         [TestCase(120, 10, ExpectedResult = 1200)]
         [TestCase(120, 33.412, ExpectedResult = 4009.44)]
-        public decimal Calcula_Total_PrecioYCant_DistCero(int cant, decimal precio)
+        public decimal Get_Total_PrecioYCant_DistCero(int cant, decimal precio)
         {
             return calcu.getTotal(cant, precio);
         }
