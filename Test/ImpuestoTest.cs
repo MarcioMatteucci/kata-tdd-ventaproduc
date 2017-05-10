@@ -17,7 +17,7 @@ namespace Test
         [TestCase("CA", ExpectedResult = 0.875)]
         [TestCase("TX", ExpectedResult = 0.15)]
         [TestCase("NV", ExpectedResult = 0.12)]
-        [TestCase("", ExpectedResult = 0.10)]
+        [TestCase("", ExpectedResult = 0)]
         public decimal Get_Impuesto(string estado)
         {
             return imp.getImpuesto(estado);

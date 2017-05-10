@@ -22,7 +22,7 @@ namespace Test
         [TestCase(0, 0)]
         public void Get_Total_Cant_EsCero(int cant, decimal precio)
         {
-            var resul = calcu.getTotal(cant, precio);
+            var resul = calcu.getTotal(cant, precio,"");
             Assert.AreEqual(0m, resul);
         }
 
@@ -33,7 +33,7 @@ namespace Test
         [TestCase(1230, 0.0)]
         public void Get_Total_Precio_EsCero(int cant, decimal precio)
         {
-            var resul = calcu.getTotal(cant, precio);
+            var resul = calcu.getTotal(cant, precio,"");
             Assert.AreEqual(0m, resul);
         }
 
@@ -44,7 +44,7 @@ namespace Test
         [TestCase(100, 9.999, ExpectedResult = 999.9)]
         public decimal Get_Total_Monto_Menor_1000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
 
         [TestCase(100, 10, ExpectedResult = 970)]
@@ -52,7 +52,7 @@ namespace Test
         [TestCase(30, 150.54, ExpectedResult = 4380.714)]
         public decimal Get_Total_Monto_Entre_1000y5000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
 
         [TestCase(5000, 1, ExpectedResult = 4750)]
@@ -60,28 +60,28 @@ namespace Test
         [TestCase(9999, 1, ExpectedResult = 9499.05)]
         public decimal Get_Total_Monto_Entre_5000y10000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
 
         [TestCase(10000, 1, ExpectedResult = 9200)]
         [TestCase(10000, 1.432, ExpectedResult = 13174.4)]
         public decimal Get_Total_Monto_Entre_10000y15000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
 
         [TestCase(15000, 1, ExpectedResult = 13500)]
         [TestCase(15000, 1.432, ExpectedResult = 19332)]
         public decimal Get_Total_Monto_Entre_15000y50000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
 
         [TestCase(50000, 1, ExpectedResult = 42500)]
         [TestCase(50000, 1.432, ExpectedResult = 60860)]
         public decimal Get_Total_Monto_MasDe_50000(int cant, decimal precio)
         {
-            return calcu.getTotal(cant, precio);
+            return calcu.getTotal(cant, precio,"");
         }
     }
 }

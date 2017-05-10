@@ -3,6 +3,7 @@
     public class Calculador
     {
         private Descuento desc = new Descuento();
+        private Impuesto imp = new Impuesto();
 
         public decimal getSubtotalSinDescuento (int cant, decimal precio)
         {
@@ -17,11 +18,19 @@
             return subtotalConDesc;
         }
 
-        public decimal getTotal (int cant, decimal precio)
+        public decimal getSubtotalConImpuesto (decimal subtotalConDesc, string estado)
+        {
+            var impuesto = imp.getImpuesto(estado);
+            var subtotalConImp = subtotalConDesc + (subtotalConDesc * impuesto);
+            return subtotalConImp;
+        }
+
+        public decimal getTotal (int cant, decimal precio, string estado)
         {
             var subtotalSinDesc = getSubtotalSinDescuento(cant,precio);
             var subtotalConDesc = getSubtotalConDescuento(subtotalSinDesc);
-            return subtotalConDesc;
+            var total = getSubtotalConImpuesto(subtotalConDesc, estado);
+            return total;
         }
         
     }

@@ -15,7 +15,7 @@
                 case "CA":
                     return 0.875m;
                 default:
-                    return 0.10m;
+                    return 0;
             }
         }
     }
